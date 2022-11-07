@@ -1,6 +1,6 @@
 # DAI-2022-SMTP-Classe-B
 
-⚠️ Please clone [this fork of MockMock server](https://github.com/DominiqueComte/MockMock) instead of the official version and run `mvn clean package` to generate a working .jar file. The official version do not work with Java 17 anymore.
+⚠️ Please clone [this fork of MockMock server](https://github.com/DominiqueComte/MockMock) instead of the official version and run `mvn clean package` to generate a working .jar file. The official version does not work with Java 17 anymore.
 
 ## Objectives
 
@@ -62,7 +62,7 @@ Your report MUST include the following sections:
 
 ## References
 
-* [Here is the fork of MockMock server](https://github.com/DominiqueComte/MockMock), because the official version do not work with Java 17 anymore.
+* [Here is the fork of MockMock server](https://github.com/DominiqueComte/MockMock), because the official version does not work with Java 17 anymore.
 * The [mailtrap](<https://mailtrap.io/>) online service for testing SMTP
 * The [SMTP RFC](<https://tools.ietf.org/html/rfc5321#appendix-D>), and in particular the [example scenario](<https://tools.ietf.org/html/rfc5321#appendix-D>)
 * Testing SMTP with TLS: `openssl s_client -connect smtp.mailtrap.io:2525 -starttls smtp -crlf`

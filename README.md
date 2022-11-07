@@ -1,6 +1,6 @@
 # DAI-2022-SMTP-Classe-B
 
-⚠️ Please clone [our own fork of MockMock server](https://github.com/HEIGVD-Course-API/MockMock) instead of the official one, because we resolved an issues with a dependency (see this [pull request](https://github.com/tweakers/MockMock/pull/8) if you want to have more information).
+⚠️ Please clone [this fork of MockMock server](https://github.com/DominiqueComte/MockMock) instead of the official one, because the official one do not work with Java 17 anymore.
 
 ## Objectives
 
@@ -62,7 +62,7 @@ Your report MUST include the following sections:
 
 ## References
 
-* [Here is our fork of MockMock server](https://github.com/HEIGVD-Course-API/MockMock), in which we resolved an issues with a dependency (see this [pull request](https://github.com/tweakers/MockMock/pull/8) if you want to have more information).
+* [Here is our fork of MockMock server](https://github.com/DominiqueComte/MockMock), in which we resolved an issues with a dependency (see this [pull request](https://github.com/tweakers/MockMock/pull/8) if you want to have more information).
 * The [mailtrap](<https://mailtrap.io/>) online service for testing SMTP
 * The [SMTP RFC](<https://tools.ietf.org/html/rfc5321#appendix-D>), and in particular the [example scenario](<https://tools.ietf.org/html/rfc5321#appendix-D>)
 * Testing SMTP with TLS: `openssl s_client -connect smtp.mailtrap.io:2525 -starttls smtp -crlf`

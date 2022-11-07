@@ -1,6 +1,6 @@
 # DAI-2022-SMTP-Classe-B
 
-⚠️ Please clone [this fork of MockMock server](https://github.com/DominiqueComte/MockMock) instead of the official one, because the official one do not work with Java 17 anymore.
+⚠️ Please clone [this fork of MockMock server](https://github.com/DominiqueComte/MockMock) instead of the official version and run `mvn clean package` to generate a working .jar file. The official version do not work with Java 17 anymore.
 
 ## Objectives
 

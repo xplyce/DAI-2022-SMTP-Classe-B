@@ -1,6 +1,4 @@
-package model;
-
-import model.Person;
+package model.mail;
 
 public class Mail {
 

@@ -1,6 +1,4 @@
-package model;
-
-import model.Person;
+package model.mail;
 
 import java.util.ArrayList;
 import java.util.List;

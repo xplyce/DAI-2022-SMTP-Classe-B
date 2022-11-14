@@ -1,3 +1,6 @@
+package model;
+
+import model.Person;
 
 public class Mail {
 

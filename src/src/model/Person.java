@@ -1,3 +1,5 @@
+package model;
+
 public class Person {
     private final String email;
     private final String firstName;

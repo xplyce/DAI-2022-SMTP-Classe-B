@@ -73,7 +73,7 @@ public class PrankGenerator {
             mails.add(new Mail());
 
         for (int i = 0; i < groups.size(); ++i) {
-            mails.get(i).setSender(groups.get(i).getListPerson().get(0).toString());
+            mails.get(i).setSender(groups.get(i).getListPerson().get(0));
             mails.get(i).setReceivers(groups.get(i).getListPerson().subList(1, groups.get(i).size()));
             mails.get(i).setText(messages.get(i % messages.size()));
         }

@@ -30,8 +30,9 @@ public class Client {
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 
 
-
+        reader.readLine();
         writer.write("HELO localhost\r\n");
+        writer.flush();
         String line = reader.readLine();
 
         if(!line.startsWith("250")){
@@ -39,45 +40,37 @@ public class Client {
         }
 
         writer.write("MAIL FROM:");
-        writer.write(mail.getSender());
-        writer.write("\r\n");
+        writer.write(mail.getSender() + "\r\n");
         writer.flush();
 
-        for(String sender : mail.getReceivers()){
+        for(String receiver : mail.getReceivers()){
             writer.write("RCPT TO:");
-            writer.write(sender);
-            writer.write("\r\n");
+            writer.write(receiver + "\r\n");
             writer.flush();
-
         }
 
-        for(String cc : mail.getCc()){
-            writer.write("RCPT TO:");
-            writer.write(cc);
-            writer.write("\r\n");
-            writer.flush();
+//        for(String cc : mail.getCc()){
+//            writer.write("RCPT TO:");
+//            writer.write(cc);
+//            writer.write("\r\n");
+//            writer.flush();
+//        }
 
-        }
-
-        writer.write("DATA");
-        writer.write("\r\n");
+        writer.write("DATA\r\n");
         writer.flush();
 
         writer.write("Content-Type: text/plain; charset=\"utf8\"\r\n");
-        writer.write("From: " + mail.getSender()+ "\r\n");
+        writer.write("From: " + mail.getSender() + "\r\n");
 
-        writer.write("To: " + mail.getReceivers()[0]);
-        for (int i = 1; i < mail.getReceivers().length; i++){
-            writer.write("To: " + mail.getReceivers()[i]);
-
+        writer.write("To: ");
+        for (int i = 0; i < mail.getReceivers().length; i++){
+            writer.write(mail.getReceivers()[i] + (i != mail.getReceivers().length - 1 ? "," : ""));
         }
         writer.write("\r\n");
         writer.flush();
 
         writer.write(mail.getText());
-        writer.write("\r\n");
-        writer.write(".");
-        writer.write("\r\n");
+        writer.write("\r\n.\r\n");
         writer.flush();
 
         writer.write("QUIT\r\n");

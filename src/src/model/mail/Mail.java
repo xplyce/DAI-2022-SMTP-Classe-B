@@ -13,8 +13,8 @@ public class Mail {
         return sender;
     }
 
-    public void setSender(String sender){
-        this.sender = sender;
+    public void setSender(Person sender){
+        this.sender = sender.getEmail();
     }
 
     public String[] getReceivers(){

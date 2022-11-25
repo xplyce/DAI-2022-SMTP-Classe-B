@@ -2,27 +2,23 @@ package model.mail;
 
 public class Mail {
 
-    private Person sender;
-    private Group receivers;
-    private Group cc;
-    private String subject;
+    private String sender;
+    private String[] receivers;
+    private String[] cc;
     private String text;
 
     public Mail() {
-        receivers = new Group();
+        receivers = new String[0];
     }
 
-    public Person getSender() {return sender;}
-    public void setSender(Person sender){this.sender = sender;}
+    public String getSender() {return sender;}
+    public void setSender(String sender){this.sender = sender;}
 
-    public Group getReceivers(){return receivers;}
-    public void setReceivers(Group receivers) {this.receivers = receivers;}
+    public String[] getReceivers(){return receivers;}
+    public void setReceivers(String[] receivers) {this.receivers = receivers;}
 
-    public Group getCc() {return cc;}
-    public void setCc(Group cc) {this.cc = cc;}
-
-    public String getSubject(){return subject;}
-    public void setSubject(String subject) {this.subject = subject;}
+    public String[] getCc() {return cc;}
+    public void setCc(String[] cc) {this.cc = cc;}
 
     public String getText(){return text;}
     public void setText(String text) {this.text = text;}

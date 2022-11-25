@@ -1,22 +1,81 @@
 package model.prank;
 
+import model.mail.Group;
+import model.mail.Mail;
+import model.mail.Person;
+
+import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.util.Map;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrankGenerator {
-    public boolean makeGroups(int nbGroup, FileInputStream fileInputStream) {
+    private List<Group> groups;
+    private List<Mail> mails;
+    private Group victimsList = new Group();
+    private List<String> messages = new ArrayList<>();
+    static private final int NB_GROUP_MIN = 3;
+    static private final String FIN_MESSAGE = "ThisIsTheEnd";
 
-
-        return false;
+    public List<Mail> getMails () {
+        return mails;
     }
 
-    public void makeMails(FileInputStream fileInputStream) {
+    public boolean makeGroups(int nbGroup, FileInputStream fileInputStream) throws IOException {
+        groups = new ArrayList<>(nbGroup);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
 
+        String email;
+        while((email = br.readLine())  != null) {
+            Person p = new Person(email);
+            victimsList.addPerson(p);
+        }
 
+        if(victimsList.size() < NB_GROUP_MIN * nbGroup) {
+            System.out.println("TEST : " + victimsList.size() + " - " +  NB_GROUP_MIN * nbGroup);
+            System.out.println("Erreur, la liste des emails n'est pas assez longue");
+            return false;
+        }
 
+        for(int j = 0; j < nbGroup; ++j)
+            groups.add(new Group());
+
+        while(!victimsList.isEmpty()) {
+            for(int j = 0; j < nbGroup; ++j) {
+                if(!victimsList.isEmpty())
+                    groups.get(j).addPerson(victimsList.pop());
+            }
+        }
+        return true;
     }
 
-    public Map<Object, Object> getMails() {
-        return null;
+    public void makeMails(FileInputStream fileInputStream) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+
+        StringBuilder message = new StringBuilder();
+        String line;
+        while ((line = br.readLine()) != null) {
+            while (!line.startsWith(FIN_MESSAGE)) {
+                message.append(line).append("\r\n");
+                line = br.readLine();
+            }
+            messages.add(message.toString());
+            message = new StringBuilder();
+        }
+
+        mails = new ArrayList<>(groups.size());
+
+        for (int j = 0; j < groups.size(); ++j)
+            mails.add(new Mail());
+
+        for (int i = 0; i < groups.size(); ++i) {
+            mails.get(i).setSender(groups.get(i).getListPerson().get(0).toString());
+            mails.get(i).setReceivers(groups.get(i).getListPerson().subList(1, groups.get(i).size()));
+            mails.get(i).setText(messages.get(i % messages.size()));
+        }
     }
 }

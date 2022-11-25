@@ -1,14 +1,13 @@
 package model.mail;
 
 public class Person {
-    private final String email;
+    private String email;
 
-
-
-    public Person(String firstName, String lastName, String email){
-
+    public Person (String email){
         this.email = email;
     }
+
+    public Person() {}
 
     String getEmail(){
         return email;

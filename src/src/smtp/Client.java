@@ -25,7 +25,7 @@ public class Client {
     }
 
     public void sendMail(Mail mail) throws IOException {
-        socket = new Socket(address,port);
+        socket = new Socket(address, port);
         writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8),true);
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 

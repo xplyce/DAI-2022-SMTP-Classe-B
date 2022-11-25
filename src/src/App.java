@@ -1,5 +1,19 @@
+import model.prank.Prank;
+import model.prank.PrankConfig;
+import java.io.IOException;
+
 public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String ... args) throws IOException {
+        final int nbGroup               = 3;
+        final String victimesFilepath   = "src/config/victimes.utf8";
+        final String messageFilePath    = "src/config/messages.utf8";
+        final String ADRESSE            = "localhost";
+        final int PORT                  = "2525";
+
+        PrankConfig prankConfig = new PrankConfig(nbGroup, victimesFilepath, messageFilePath);
+        Prank prank = new Prank(prankConfig, ADRESSE, PORT);
+
+        if(!prank.makePrank())
+            System.out.println("Erreur lors de l'envoie des prankies");
     }
 }

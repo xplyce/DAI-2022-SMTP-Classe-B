@@ -1,10 +1,6 @@
-package ch.heigvd.api.model.prank;
+package model.prank;
 
-import model.mail.Mail;
-import model.prank.PrankConfig;
-import model.prank.PrankGenerator;
 import smtp.Client;
-
 import java.io.*;
 
 public class Prank {
@@ -24,7 +20,7 @@ public class Prank {
         prankGenerator.makeMails(new FileInputStream(prankConfig.getMessageFilePath()));
 
         for(int i = 0; i < prankConfig.getNbGroup(); ++i) {
-            client.sendMail((Mail) prankGenerator.getMails().get(i));
+            client.sendMail(prankGenerator.getMails().get(i));
         }
         return true;
     }

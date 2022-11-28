@@ -32,12 +32,13 @@ public class Client {
         writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8),true);
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 
-        writer.write("EHLO localhost\r\n");
-        test.append("EHLO localhost\r\n"); //TEST
+        writer.write("HELO localhost\r\n");
+        test.append("HELO localhost\r\n"); //TEST
         writer.flush();
         String line = reader.readLine();
 
-        while(!line.startsWith("250")){ //ou un readLine
+        while(!line.startsWith("250 ")){ //ou un readLine
+            System.out.println("test : " + line);
             line = reader.readLine();
         }
 

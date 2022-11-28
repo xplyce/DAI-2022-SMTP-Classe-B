@@ -3,6 +3,8 @@ package model.prank;
 import smtp.Client;
 import java.io.*;
 
+import static java.lang.Thread.sleep;
+
 public class Prank {
 
     private final Client client;
@@ -15,7 +17,7 @@ public class Prank {
     }
 
     public boolean makePrank() throws IOException {
-        if(!prankGenerator.makeGroups(prankConfig.getNbGroup(), new FileInputStream(prankConfig.getVictimFilePath())))
+        if(!prankGenerator.makeGroups(prankConfig.getNbGroup(), new FileInputStream(prankConfig.getVictimesFilePath())))
             return false;
         prankGenerator.makeMails(new FileInputStream(prankConfig.getMessageFilePath()));
 

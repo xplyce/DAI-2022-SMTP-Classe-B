@@ -3,12 +3,12 @@ package model.prank;
 public class PrankConfig {
 
     private final int nbGroup;
-    private final String victimFilePath;
+    private final String victimesFilePath;
     private final String messageFilePath;
 
-    public PrankConfig(int n, String victimFilePath, String messageFilePath) {
+    public PrankConfig(int n, String victimesFilePath, String messageFilePath) {
         nbGroup = n;
-        this.victimFilePath = victimFilePath;
+        this.victimesFilePath = victimesFilePath;
         this.messageFilePath = messageFilePath;
     }
 
@@ -16,8 +16,8 @@ public class PrankConfig {
         return nbGroup;
     }
 
-    public String getVictimFilePath() {
-        return victimFilePath;
+    public String getVictimesFilePath() {
+        return victimesFilePath;
     }
 
     public String getMessageFilePath() {

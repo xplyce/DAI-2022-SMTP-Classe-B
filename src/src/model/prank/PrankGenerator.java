@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PrankGenerator {
@@ -66,6 +67,8 @@ public class PrankGenerator {
             messages.add(message.toString());
             message = new StringBuilder();
         }
+
+        Collections.shuffle(messages);
 
         mails = new ArrayList<>(groups.size());
 

@@ -6,7 +6,6 @@ public class Mail {
 
     private String sender;
     private String[] receivers = new String[0];
-    private String[] cc = new String[0];
     private String text;
 
     public String getSender() {

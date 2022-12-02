@@ -48,5 +48,11 @@ a son interface web dans lequel nous pourront voir toutes les informations
 des mails envoyés (contenu et les adresses emails concernées).
 
 #### Utilisation:
+Pour utiliser le serveur MockMock, nous avons cloner le git suivant
+https://github.com/DominiqueComte/MockMock et nous l'avons compiler sur notre
+machine pour créer le dossier Target qui contiendra le MockMock.jar. Il faut
+ensuite lancer ce dernier en ligne de commande grâce la commande "java -jar
+MockMock.jar". Pour voir l'affichage de notre serveur, nous devons ouvrir un
+navigateur web est accéder a la page "http://localhost:8282/".
 
 

@@ -6,9 +6,9 @@ public class App {
     public static void main(String ... args) throws IOException {
         final int nbGroup               = 3;
         final String victimesFilepath   = "src/config/victimes.utf8";
-        final String messageFilePath    = "src/config/messages.utf8";
+        final String messageFilePath    = "src/config/messages.ASC";
         final String ADRESSE            = "localhost";
-        final int PORT                  = 2525;
+        final int PORT                  = 25;
 
         PrankConfig prankConfig = new PrankConfig(nbGroup, victimesFilepath, messageFilePath);
         Prank prank = new Prank(prankConfig, ADRESSE, PORT);

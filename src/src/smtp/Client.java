@@ -29,7 +29,7 @@ public class Client {
         StringBuilder test = new StringBuilder();
 
         socket = new Socket(address, port);
-        writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8),true);
+        writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8));
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 
         writer.write("HELO localhost\r\n");

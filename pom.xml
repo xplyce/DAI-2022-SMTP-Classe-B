@@ -21,12 +21,4 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
-    <profiles>
-        <profile>
-            <id>development</id>
-            <properties>
-                <src.dir>${project.basedir}/main/src</src.dir>
-            </properties>
-        </profile>
-    </profiles>
 </project>

@@ -3,8 +3,6 @@ package model.prank;
 import smtp.Client;
 import java.io.*;
 
-import static java.lang.Thread.sleep;
-
 public class Prank {
 
     private final Client client;

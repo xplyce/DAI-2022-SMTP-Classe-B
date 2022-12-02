@@ -27,14 +27,6 @@ public class Mail {
         this.receivers = list;
     }
 
-    public String[] getCc() {
-        return cc;
-    }
-
-    public void setCc(String[] cc) {
-        this.cc = cc;
-    }
-
     public String getText(){
         return text;
     }

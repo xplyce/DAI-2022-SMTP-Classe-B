@@ -16,8 +16,8 @@ import java.util.List;
 public class PrankGenerator {
     private List<Group> groups;
     private List<Mail> mails;
-    private Group victimsList = new Group();
-    private List<String> messages = new ArrayList<>();
+    private final Group victimsList = new Group();
+    private final List<String> messages = new ArrayList<>();
     static private final int NB_GROUP_MIN = 3;
     static private final String FIN_MESSAGE = "ThisIsTheEnd";
 

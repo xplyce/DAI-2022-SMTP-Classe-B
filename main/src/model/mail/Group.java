@@ -2,10 +2,9 @@ package model.mail;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Group {
-    private List<Person> listPerson;
+    private final List<Person> listPerson;
 
 
 

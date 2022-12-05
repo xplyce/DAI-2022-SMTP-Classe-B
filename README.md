@@ -55,4 +55,26 @@ ensuite lancer ce dernier en ligne de commande grâce la commande "java -jar
 MockMock.jar". Pour voir l'affichage de notre serveur, nous devons ouvrir un
 navigateur web est accéder a la page "http://localhost:8282/".
 
+Nous vous avons également mit a disposition dans le dossier Docker de quoi 
+créer et lancer un conteneur Docker pour une plus simple utilisation. Dans 
+ce dossier Docker, Vous aurez un autre dossier contenant le mockmock.jar 
+mais vous aurez également tout les scripts utiles à la création et à 
+l'utilisation du conteneur. "build-image.sh" servira a construire votre 
+conteneur Docker alors que "docker-run.sh" et "docker-stop.sh" vous 
+servirons à l'exéctuer et l'arrêter.
 
+### Instruction pour lancer une campagne de prank
+
+Voici les quelques étapes qui vont vous permettre de lancer une campagne de 
+prank très rapidement.
+
+1. Clonez se repo et modifiez les fichier "victimes.utf8" et "messages.utf8".
+   Attention a bien mettre le séparateur "ThisIsTheEnd" entre chaque message 
+   et à ne pas mettre de retour à la ligne entre ce séparateur et le sujet 
+   du message d'après pour que le programme puisse les différencier.
+2. Modifiez également le fichier config.properties en fonction de quel 
+   numéro de port et le nombre de groupe de personne à qui vous voulez faire 
+   un  prank.
+3. Exéctuez le serveur MockMock comme expliqué dans la partie utilisation.
+4. Il ne vous reste plus qu'a exécuter le programme et vous rendre sur 
+   "http://localhost:8282/" pour voir le résultat.
